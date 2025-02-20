@@ -5,7 +5,7 @@ from urllib.request import urlopen
 # OWASP A02: Cryptographic Failures
 # Sensitive data exposure
 db_config = {
-    'host': 'mydatabase.com', 
+    'host': 'https://mydatabase.com', 
     # OWASP A05: Security Misconfiguration
     # URL incomplete should be a proper secured host/website ex. https://mydatabase.com
     # re-configure the host site to https://mydatabase.com for secured hosting
