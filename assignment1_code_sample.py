@@ -21,6 +21,7 @@ def send_email(to, subject, body):
     # Using os.system() to execute shell commands allows attackers to inject malicious shell commands.
     # If 'body' contains a malicious payload, it could execute arbitrary commands.
     # Mitigation: Use a secure email library instead of executing shell commands.
+    # RM
     
     msg = MIMEMultipart()
     msg['From'] = 'noreply@example.com'
