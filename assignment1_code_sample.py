@@ -2,11 +2,11 @@ import os
 import pymysql
 from urllib.request import urlopen
 
-# OWASP A02: Cryptographic Failures
+# OWASP A02: Cryptographic Failures - CM
 # Sensitive data exposure
 db_config = {
     'host': 'https://mydatabase.com', 
-    # OWASP A05: Security Misconfiguration
+    # OWASP A05: Security Misconfiguration - CM
     # URL incomplete should be a proper secured host/website ex. https://mydatabase.com
     # re-configure the host site to https://mydatabase.com for secured hosting
     'user': 'admin',
@@ -22,7 +22,7 @@ def send_email(to, subject, body):
 
 def get_data():
     url = 'https://insecure-api.com/get-data' 
-    # OWASP A05: Security Misconfiguration 
+    # OWASP A05: Security Misconfiguration - CM
     # URLs should use https to have the page more secured
     # changed the url to 'https'
     data = urlopen(url).read().decode()
