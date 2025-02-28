@@ -6,8 +6,13 @@ import smtplib
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
+# OWASP A02: Cryptographic Failures - CM
+# Sensitive data exposure
 db_config = {
-    'host': 'mydatabase.com',
+    'host': 'https://mydatabase.com', 
+    # OWASP A05: Security Misconfiguration - CM
+    # URL incomplete should be a proper secured host/website ex. https://mydatabase.com
+    # re-configure the host site to https://mydatabase.com for secured hosting
     'user': 'admin',
     'password': 'secret123'
 }
@@ -47,7 +52,10 @@ def send_email(to, subject, body):
         print(f"Error sending email: {e}")
 
 def get_data():
-    url = 'http://insecure-api.com/get-data'
+    url = 'https://insecure-api.com/get-data' 
+    # OWASP A05: Security Misconfiguration - CM
+    # URLs should use https to have the page more secured
+    # changed the url to 'https'
     data = urlopen(url).read().decode()
     return data
 
